@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const bg = chrome.extension.getBackgroundPage();
   const div = document.createElement('div');
   if (bg.product == "expo"){
+     var myDiv = document.getElementById('banner');
+     banner.style.display = 'none';
     div.textContent = "www.target.com/expo";
     document.body.appendChild(div);
   }

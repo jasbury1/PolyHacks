@@ -1,20 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var checkPageButton = document.getElementById('checkPage');
-  checkPageButton.addEventListener('click', function() {
-
-    chrome.tabs.getSelected(null, function(tab) {
-      d = document;
-
-      var f = d.createElement('form');
-      f.action = 'http://gtmetrix.com/analyze.html?bm';
-      f.method = 'post';
-      var i = d.createElement('input');
-      i.type = 'hidden';
-      i.name = 'url';
-      i.value = tab.url;
-      f.appendChild(i);
-      d.body.appendChild(f);
-      f.submit();
-    });
-  }, false);
+  const bg = chrome.extension.getBackgroundPage();
+  const div = document.createElement('div');
+  if (bg.product == "expo"){
+    div.textContent = "www.target.com/expo";
+    document.body.appendChild(div);
+  }
+  else if(bg.product == "cello"){
+    div.textContent = "www.target.com/cello";
+    document.body.appendChild(div);
+  }
+  else{
+    div.textContent = "";
+    document.body.appendChild(div);
+  }
 }, false);

@@ -9,4 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     div.textContent = "www.target.com/cello";
     document.body.appendChild(div);
   }
+  else{
+    div.textContent = "";
+    document.body.appendChild(div);
+  }
 }, false);

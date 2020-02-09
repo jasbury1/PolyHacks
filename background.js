@@ -12,7 +12,5 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   else{
     window.product = "";
   }
-  chrome.commands.onCommand.addListener(function(command) {
-      console.log('Command:', command);
-    });
+  console.log(window.product);
 });
